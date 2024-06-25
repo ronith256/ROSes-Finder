@@ -30,7 +30,7 @@ echo "ROS-XGBOOST (1/2)"
 
 #### Hard voting
 paste xgb_2class.out nn_2class.out cnn_2class.out | awk '{print $1" "$2+$3+$4}' | awk '$2>1' | awk '{print $1}' > yes.id
-seqkit grep -f yes.id yes.fa > yes-yes.fa
+./seqkit grep -f yes.id yes.fa > yes-yes.fa
 rm -f yes.id
 echo "Hard voting finish"
 
@@ -56,7 +56,6 @@ echo "ROS-NN finish(2/2)"
 
 #### Soft voting
 rm -f yes-yes.fa
-python soft_vote.py
 echo "Soft voting finish"
 
 # Clean up
