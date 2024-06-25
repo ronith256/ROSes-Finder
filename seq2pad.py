@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 #from keras.utils import pad_sequences
-from keras_preprocessing.sequence import pad_sequences
+from keras.utils import pad_sequences
 
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 import torch.nn.functional as F
